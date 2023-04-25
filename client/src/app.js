@@ -1,8 +1,19 @@
+import {BrowserRouter , Routes , Route} from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+
 function App() {
   return (
     <div className="App">
-      <h1 className="text-center text-5xl font-bold bg-blue-800 text-white p-5">SADDLE</h1>
-    </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/register" element={<Register/>}/>
+            </Routes>
+        </BrowserRouter>
+      </div>
   );
 }
 
