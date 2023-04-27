@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const authMiddleware= require("../middlewares/authMiddleware");
 
 router.post('/register', async (req,res) => {
+    console.log("it works");
     try{
      const password = req.body.password
      const salt = await bcrypt.genSaltSync(10);
@@ -26,6 +27,7 @@ router.post('/register', async (req,res) => {
 });
 
 router.post('/login', async (req, res) => {
+    console.log("it works");
     try{
        const user = await User.findOne({email: req.body.email});
        if(!user){

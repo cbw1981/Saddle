@@ -2,7 +2,7 @@ import {BrowserRouter , Routes , Route} from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import PublicRoute from './components/publicRoute';
+import PublicRoute from './components/PublicRoute';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {

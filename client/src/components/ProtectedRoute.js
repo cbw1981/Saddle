@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {axios} from 'axios';
+import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 
-function ProtectedRoute(children){
+function ProtectedRoute({children}){
     const navigate =useNavigate();
     const [readyToRender, setReadyToRender]= React.useState(false)
     const [userData, setUserData]= useState(null);
@@ -27,10 +27,9 @@ function ProtectedRoute(children){
             setReadyToRender(true);
             navigate("/login");
           }
-        }
+    }
       
-      
-        useEffect(()=>{
+       useEffect(()=>{
           if(userData === null){
           getUserData();
         }}, []);
@@ -41,4 +40,4 @@ function ProtectedRoute(children){
         )
 }
 
-export default ProtectedRoute
+export default ProtectedRoute;
