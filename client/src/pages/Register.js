@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import{Link} from "react-router-dom";
 
 function Register() {
   const [user, setUser] = useState({
@@ -7,7 +8,7 @@ function Register() {
     email: "",
     password: "",
   });
-  const register= async ()=>{
+  const register = async()=>{
     try {
      const response = await axios.post("/api/users/register", user);
      if(response.data.success) {
@@ -15,8 +16,8 @@ function Register() {
      }else{
       alert(response.data.message);
      }
-    }catch(err){
-      console.log(err);
+    }catch(error){
+      console.log(error);
 
     }
   }
@@ -49,7 +50,7 @@ function Register() {
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         />
         <button className="primary" onClick={register}>Saddle Up</button>
-    
+        <Link to = "/login" className ="text-gray-600 underline">Click here to login</Link>
       </div>
     </div>
   );

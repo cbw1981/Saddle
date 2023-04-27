@@ -20,7 +20,7 @@ const songSchema = new mongoose.Schema({
     src: {
         type: String,
         required: true
-    }
+    },
 }, {
     timestamps: true
 });
