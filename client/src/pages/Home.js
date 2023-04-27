@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function Home() {
+
   return (
-    <div>Home</div>
+    <div className = "flex-items-center justify-center h-screen">
+      <h1 className="text-5xl">Home</h1>
+      </div>
   )
 }
 
-export default Home
+export default Home;
