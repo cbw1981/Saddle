@@ -1,12 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import SongsList from "../components/SongsList";
+import Playlists from "../components/Playlists";
+import Player from "../components/Player";
 
 function Home() {
-
   return (
-    <div className = "flex-items-center justify-center h-screen">
-      <h1 className="text-5xl">Home</h1>
+    <>
+      <div className="flex gap-5">
+        <div className="w-1/2">
+          <SongsList />
+        </div>
+        <div className="w-1/2">
+          <Playlists />
+        </div>
       </div>
-  )
+      <Player />
+    </>
+  );
 }
 
 export default Home;

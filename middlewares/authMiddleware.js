@@ -6,7 +6,6 @@ module.exports = (req, res, next) => {
         const decoded =jwt.verify(token, process.env.SECRET_KEY);
         req.body.userId= decoded.userId;
         next();
-
     }catch(err){
         console.log(err);
       return res.status(500).send({message: err.message, success:false});  

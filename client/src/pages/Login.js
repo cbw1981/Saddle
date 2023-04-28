@@ -1,28 +1,36 @@
 import React, { useState } from "react";
 import axios from "axios";
-import{Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { HideLoading, ShowLoading } from "../redux/alertSlice";
+import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
-function Login () {
+function Login() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    
     email: "",
     password: "",
   });
-  const login = async ()=>{
+  const login = async () => {
     try {
-     const response = await axios.post("/api/users/login", user);
-     if(response.data.success) {
-      localStorage.setItem("token", response.data.data);
-      navigate("/");
-     }else{
-      alert(response.data.message);
-     }
-    }catch(err){
-      console.log(err);
-
+      dispatch(ShowLoading());
+      const response = await axios.post("/api/users/login", user);
+      dispatch(HideLoading());
+      if (response.data.success) {
+        toast.success(response.data.message);
+        localStorage.setItem("token", response.data.data);
+        navigate("/");
+      } else {
+        toast.error(response.data.message);
+        alert(response.data.message);
+      }
+    } catch (error) {
+      toast.error("Something went wrong");
+      dispatch(HideLoading());
+      console.log(error);
     }
-  }
+  };
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="flex flex-col gap-3 w-96 p-5 shadow border border-gray-300">
