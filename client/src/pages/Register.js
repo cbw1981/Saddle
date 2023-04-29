@@ -13,21 +13,17 @@ function Register() {
     email: "",
     password: "",
   });
-  const register = async () => {
+  const register= async ()=>{
     try {
-      dispatch(ShowLoading());
-      const response = await axios.post("/api/users/register", user);
-      dispatch(HideLoading());
-      if (response.data.success) {
-        toast.success(response.data.message);
-        navigate("/login");
-      } else {
-        toast.error(response.data.message);
-      }
-    } catch (error) {
-      toast.error("Something went wrong");
-      dispatch(HideLoading());
-      console.log(error);
+     const response = await axios.post("/api/users/register", user);
+     if(response.data.success) {
+      alert("User registered successfully");
+     }else{
+      alert(response.data.message);
+     }
+    }catch(err){
+      console.log(err);
+
     }
   };
   return (

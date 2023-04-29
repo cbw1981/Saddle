@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
+=======
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -5,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SetAllSongs, SetUser } from "../redux/userSlice";
 import { HideLoading, ShowLoading } from "../redux/alertSlice";
 import DefaultLayout from "./DefaultLayout";
+>>>>>>> b02359d98ea123451f133a7d89a037061894b3a0
 
 function ProtectedRoute({ children }) {
  
