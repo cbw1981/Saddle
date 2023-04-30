@@ -7,14 +7,14 @@ function AdminHome() {
   const { allSongs, user } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if(user)
-    {
-      if ((user?.isAdmin && !user.isAdmin) || !user?.isAdmin) {
-        navigate("/");
-      }
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if(user)
+  //   {
+  //     if ((user?.isAdmin && !user.isAdmin) || !user?.isAdmin) {
+  //       navigate("/");
+  //     }
+  //   }
+  // }, [user]);
 
   return (
     <div>

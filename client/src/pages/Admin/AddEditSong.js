@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FileUploader } from "react-drag-drop-files";
-import { HideLoading, ShowLoading } from "../../redux/alertsSlice";
+import { HideLoading, ShowLoading } from "../../redux/alertSlice";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { SetAllSongs } from "../../redux/userSlice";
+import riverCowboy from "../../assets/alan-jackson2.jpg"
 
 function AddEditSong() {
   const { allSongs, user } = useSelector((state) => state.user);
@@ -89,13 +90,13 @@ function AddEditSong() {
     }
   }, [allSongs]);
 
-  useEffect(() => {
-    if (user) {
-      if ((user?.isAdmin && !user.isAdmin) || !user?.isAdmin) {
-        navigate("/");
-      }
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     if ((user?.isAdmin && !user.isAdmin) || !user?.isAdmin) {
+  //       navigate("/");
+  //     }
+  //   }
+  // }, [user]);
 
   return (
     <div>
@@ -178,8 +179,8 @@ function AddEditSong() {
 
         <div>
           <img
-            className="h-[500px]"
-            src="https://2.bp.blogspot.com/-Nc9YO_-F8yI/TcSIAB-nR-I/AAAAAAAAAGI/hPkuxqkqVcU/s1600/music-clipartMUSIC1.jpg"
+            className="h-[500px] rounded-md"
+            src={riverCowboy}
             alt=""
           />
         </div>

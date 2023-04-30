@@ -69,13 +69,13 @@ function Player() {
   }, []);
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 p-10 shadow-lg ">
-      <div className="flex justify-between items-center border p-5 border-gray-500 rounded shadow-xl">
+    <div className="left-0 right-0 p-10 shadow-lg">
+      <div className="flex justify-between items-center border p-5 border-gray-500 rounded shadow-xl bg-slate-400">
         <div className="flex items-center gap-2 w-96">
           <img className="h-30 w-40 rounded-lg" src={logo} alt="" />
           <div>
-            <h1 className="text-active text-2xl">{currentSong?.title}</h1>
-            <h1 className="text-secondary">
+            <h1 className="text-secondary text-2xl">{currentSong?.title}</h1>
+            <h1 className="text-active">
               {currentSong?.artist} , {currentSong?.album} , {currentSong?.year}
             </h1>
           </div>
@@ -91,7 +91,7 @@ function Player() {
           ></audio>
           <div className="flex gap-10 items-center">
             <i
-              class="ri-skip-back-line text-4xl text-gray-500"
+              className="ri-skip-back-line text-4xl text-gray-500"
               onClick={onPrev}
             ></i>
 
@@ -108,7 +108,7 @@ function Player() {
             )}
 
             <i
-              class="ri-skip-forward-line text-4xl text-gray-500"
+              className="ri-skip-forward-line text-4xl text-gray-500"
               onClick={onNext}
             ></i>
           </div>
