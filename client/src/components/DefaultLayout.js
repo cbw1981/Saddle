@@ -8,9 +8,9 @@ function DefaultLayout({children}) {
   return (
     <div className="main">
         <div className="header flex justify-between p-5 shadow items-center">
-            <h1 className='text-3xl ml-7 font-bold cursor-pointer' onClick={()=>{
+            <h1 className='text-4xl ml-7 font-bold cursor-pointer' onClick={()=>{
                    navigate('/')
-            }}><b className='text-primary'>Saddle</b> <b className='text-secondary'>MUSIC</b></h1>
+            }}><b className='text-primary text-orange-300'>Saddle</b> <b className='text-secondary text-blue-700'>MUSIC</b></h1>
             <div className='flex items-center gap-2'>
                <h1 className='text-xl'>{user?.name.toUpperCase()}</h1>
                <i className="ri-logout-circle-r-line text-xl cursor-pointer" onClick={()=>{

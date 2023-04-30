@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import logo from "../assets/android-chrome-192x192.png";
 import {
   SetCurrentSong,
   SetCurrentSongIndex,
@@ -68,14 +69,10 @@ function Player() {
   }, []);
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 p-5 shadow-lg bg-white">
-      <div className="flex justify-between items-center border p-5 border-green-500 rounded shadow-xl">
+    <div className="absolute bottom-0 left-0 right-0 p-10 shadow-lg ">
+      <div className="flex justify-between items-center border p-5 border-gray-500 rounded shadow-xl">
         <div className="flex items-center gap-2 w-96">
-          <img
-            className="h-20 w-32"
-            src=""
-            alt=""
-          />
+          <img className="h-30 w-40 rounded-lg" src={logo} alt="" />
           <div>
             <h1 className="text-active text-2xl">{currentSong?.title}</h1>
             <h1 className="text-secondary">
@@ -93,15 +90,27 @@ function Player() {
             }}
           ></audio>
           <div className="flex gap-10 items-center">
-            <i class="ri-skip-back-line text-4xl text-gray-500" onClick={onPrev}></i>
+            <i
+              class="ri-skip-back-line text-4xl text-gray-500"
+              onClick={onPrev}
+            ></i>
 
             {isPlaying ? (
-              <i className="ri-pause-line text-4xl text-white bg-gray-500 rounded-2xl p-1" onClick={onPause}></i>
+              <i
+                className="ri-pause-line text-4xl text-white bg-gray-500 rounded-2xl p-1"
+                onClick={onPause}
+              ></i>
             ) : (
-              <i className="ri-play-line text-4xl text-white bg-gray-500 rounded-2xl p-1" onClick={onPlay}></i>
+              <i
+                className="ri-play-line text-4xl text-white bg-gray-500 rounded-2xl p-1"
+                onClick={onPlay}
+              ></i>
             )}
 
-            <i class="ri-skip-forward-line text-4xl text-gray-500" onClick={onNext}></i>
+            <i
+              class="ri-skip-forward-line text-4xl text-gray-500"
+              onClick={onNext}
+            ></i>
           </div>
           <div className="flex gap-3 items-center w-full">
             <i
